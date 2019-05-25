@@ -1,0 +1,2 @@
+INSERT INTO `pmw_diymodel` VALUES('5','导航','navigation','pmw_navigation','title,flag,picurl,orderid,posttime','1','true');
+INSERT INTO `pmw_diymodel` VALUES('11','配置','configs','pmw_configs','title,flag,picurl,orderid,posttime','2','true');

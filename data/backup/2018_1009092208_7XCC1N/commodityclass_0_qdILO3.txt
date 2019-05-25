@@ -1,0 +1,5 @@
+INSERT INTO `commodityclass` VALUES('2','酒具','2017-05-27 02:25:16');
+INSERT INTO `commodityclass` VALUES('3','啤酒','2015-08-30 00:18:04');
+INSERT INTO `commodityclass` VALUES('4','洋酒','2017-05-27 02:12:05');
+INSERT INTO `commodityclass` VALUES('5','红酒','2015-08-30 00:17:51');
+INSERT INTO `commodityclass` VALUES('6','白酒','2015-08-30 00:17:26');

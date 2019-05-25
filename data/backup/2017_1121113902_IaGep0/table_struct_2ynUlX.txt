@@ -1,0 +1,619 @@
+DROP TABLE IF EXISTS `activitys`;
+
+CREATE TABLE `activitys` (
+  `id` int(11) NOT NULL auto_increment,
+  `ActivityId` varchar(255) default NULL,
+  `Image` varchar(255) default NULL,
+  `Url` varchar(255) default NULL,
+  `CreatTime` datetime default NULL,
+  `Commercial` varchar(255) default NULL,
+  `orderid` int(5) NOT NULL COMMENT '排列顺序',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `adminuser`;
+
+CREATE TABLE `adminuser` (
+  `Id` varchar(100) NOT NULL,
+  `Number` varchar(100) default NULL,
+  `Password` varchar(500) default NULL,
+  `Module` varchar(1000) default NULL,
+  `CreatTime` datetime default NULL,
+  `StandbyOne` varchar(500) default NULL,
+  `StandbyTwo` varchar(500) default NULL,
+  `StandbyThree` varchar(500) default NULL,
+  `StandbyFore` varchar(500) default NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `appversion`;
+
+CREATE TABLE `appversion` (
+  `id` int(11) NOT NULL auto_increment,
+  `iosVersion` varchar(100) default NULL,
+  `iosPath` varchar(100) default NULL,
+  `androidVersion` varchar(100) default NULL,
+  `androidPath` varchar(100) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `bank`;
+
+CREATE TABLE `bank` (
+  `id` int(11) NOT NULL,
+  `BankName` varchar(100) NOT NULL COMMENT '银行名称',
+  `BankNo` bigint(30) NOT NULL COMMENT '银行卡号',
+  `RealName` varchar(100) NOT NULL COMMENT '开户人名称',
+  `Commercial` varchar(100) NOT NULL COMMENT '账号昵称'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `banknochangeflag`;
+
+CREATE TABLE `banknochangeflag` (
+  `id` int(11) NOT NULL auto_increment,
+  `Commercial` varchar(255) default NULL,
+  `State` varchar(255) default NULL,
+  `ChangeTime` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `browsing`;
+
+CREATE TABLE `browsing` (
+  `Id` varchar(100) NOT NULL default '',
+  `CommodityId` varchar(100) default NULL,
+  `UserId` varchar(100) default NULL,
+  `CreatTime` datetime default NULL,
+  `Orderid` int(10) NOT NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `collect`;
+
+CREATE TABLE `collect` (
+  `Id` varchar(100) NOT NULL default '',
+  `CommodityId` varchar(100) default NULL,
+  `UserId` varchar(100) default NULL,
+  `CreatTime` datetime default NULL,
+  `Orderid` int(10) NOT NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `comment`;
+
+CREATE TABLE `comment` (
+  `Id` varchar(100) NOT NULL default '',
+  `CommodityId` varchar(100) default NULL COMMENT '商品id',
+  `Content` varchar(5000) default NULL COMMENT '评论内容',
+  `UserId` varchar(100) default NULL COMMENT '会员id',
+  `UserName` varchar(100) default NULL COMMENT '会员名称',
+  `CreatTime` datetime default NULL,
+  `ContentType` varchar(100) default NULL COMMENT '状态',
+  `Orderid` int(10) NOT NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `commercialuser`;
+
+CREATE TABLE `commercialuser` (
+  `Id` varchar(100) NOT NULL default '' COMMENT '商户id',
+  `Commercial` varchar(255) default NULL COMMENT '商户帐号',
+  `PassWord` varchar(255) default NULL,
+  `CommercialName` varchar(100) default NULL COMMENT '商户名称',
+  `CommercialSite` varchar(500) default NULL COMMENT '商户地址',
+  `Linkman` varchar(100) default NULL COMMENT '联系人',
+  `Phone` varchar(100) default NULL COMMENT '联系电话',
+  `Lng` varchar(100) default NULL,
+  `Lat` varchar(100) default NULL,
+  `CreatTime` datetime default NULL COMMENT '创建时间',
+  `JiuQian` varchar(100) default '0',
+  `online` int(1) NOT NULL default '1' COMMENT '1上线，0未上线',
+  `Sex` varchar(100) default NULL,
+  `clientid` varchar(100) NOT NULL COMMENT '商户端设备码',
+  `HeadPortrait` varchar(255) default NULL,
+  `BirthDate` varchar(255) default NULL,
+  `NickName` varchar(100) default NULL,
+  `CommercialImg` varchar(255) default NULL,
+  `orderid` int(10) NOT NULL COMMENT '排列顺序',
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `commodity`;
+
+CREATE TABLE `commodity` (
+  `Id` varchar(100) NOT NULL COMMENT '商品id',
+  `Title` varchar(100) default NULL COMMENT '商品标题',
+  `Explains` varchar(1000) default NULL COMMENT '商品说明',
+  `Particular` longtext COMMENT '商品详细说明',
+  `Images` varchar(500) default NULL COMMENT '商品图片',
+  `picurl2` varchar(100) NOT NULL COMMENT '搜索图片',
+  `picarr` varchar(500) default NULL COMMENT '组　图',
+  `NewPrice` varchar(100) default NULL COMMENT '商品现价',
+  `OldPrice` varchar(100) default NULL COMMENT '商品原价',
+  `Standard` varchar(100) default NULL COMMENT '规格',
+  `Colour` varchar(100) default NULL COMMENT '颜色',
+  `live_prov` varchar(50) NOT NULL COMMENT '商品省份',
+  `prov` varchar(50) NOT NULL COMMENT '省份数字',
+  `live_city` varchar(50) NOT NULL COMMENT '商品城市',
+  `city` varchar(50) NOT NULL COMMENT '城市数字',
+  `JiuQian` varchar(100) default NULL COMMENT '酒钱数',
+  `JiuQianMax` varchar(255) default NULL COMMENT '最大酒钱',
+  `Pinpai` varchar(100) NOT NULL COMMENT '热门品牌',
+  `Types` varchar(100) NOT NULL COMMENT '类型',
+  `gd` int(1) NOT NULL default '0' COMMENT '广告位显示0不现实1显示',
+  `yuyue` int(1) NOT NULL default '1' COMMENT '商品是否预约 0：不预约，1预约',
+  `Country` varchar(100) NOT NULL COMMENT '国家',
+  `RecommendIndex` varchar(100) default NULL COMMENT '推荐指数为1~10',
+  `Num` varchar(100) NOT NULL default '0' COMMENT '商品销量',
+  `CommentNumber` varchar(100) default NULL COMMENT '评论人数',
+  `Grade` varchar(100) default NULL COMMENT '评分',
+  `ActivityType` varchar(100) default NULL COMMENT '活动类型0.无活动 1.限时抢购 2.限时超返 3.热销 4.新品上市',
+  `TwoImg` varchar(100) default NULL COMMENT '二维码',
+  `CommodityType` varchar(100) default NULL COMMENT '商品类型0为酒品 1为换购产品',
+  `CommodityNumber` varchar(100) default '0' COMMENT '商品总量',
+  `Period` varchar(100) default NULL COMMENT '有效期',
+  `Column` varchar(100) default NULL COMMENT '商品所属栏目',
+  `Commercial` varchar(100) default NULL COMMENT '商品所属商户',
+  `CreatTime` datetime default NULL COMMENT '创建时间',
+  `CommodityClass` varchar(500) default NULL COMMENT '酒品种分类1.白酒 18.红酒 39.洋酒 56.啤酒 72.酒具',
+  `del` varchar(500) default '0' COMMENT '0上架1未上架',
+  `SJJiuQian` varchar(500) default '0' COMMENT '商家酒钱',
+  `orderid` int(10) NOT NULL COMMENT '排列顺序',
+  `Details` text NOT NULL COMMENT '产品内容介绍',
+  `UserName` varchar(100) NOT NULL COMMENT '商品所属账号',
+  `adminlevel` int(1) NOT NULL default '1' COMMENT '商品所属账号权限1超级管理员2区域管理员',
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `commodityclass`;
+
+CREATE TABLE `commodityclass` (
+  `id` int(11) NOT NULL auto_increment,
+  `ClassName` varchar(255) default NULL,
+  `CreatTime` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `commoditydetails`;
+
+CREATE TABLE `commoditydetails` (
+  `id` varchar(255) NOT NULL,
+  `Details` text,
+  `CreatTime` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `commoditystock`;
+
+CREATE TABLE `commoditystock` (
+  `id` int(11) NOT NULL auto_increment,
+  `Warn` int(11) NOT NULL COMMENT '库存警告',
+  `Stock` int(11) default NULL COMMENT '商品库存',
+  `salenum` int(5) NOT NULL default '0' COMMENT '分店商品销量',
+  `CommodityId` varchar(255) default NULL COMMENT '商品id',
+  `CommercialUser` varchar(255) default NULL COMMENT '商户账号',
+  `jinggao` int(1) NOT NULL default '0' COMMENT '0未发送警告1发送警告',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `coupons`;
+
+CREATE TABLE `coupons` (
+  `id` int(100) unsigned NOT NULL auto_increment,
+  `money` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `logo` varchar(100) NOT NULL,
+  `Commodityid` varchar(100) NOT NULL,
+  `orderid` int(10) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `couponslist`;
+
+CREATE TABLE `couponslist` (
+  `id` int(11) NOT NULL auto_increment COMMENT 'id',
+  `gid` varchar(100) NOT NULL COMMENT '购物券id',
+  `account` varchar(100) NOT NULL COMMENT '会员账号',
+  `commercial` varchar(100) NOT NULL COMMENT '商户账号',
+  `creatime` datetime NOT NULL COMMENT '添加时间',
+  `num` int(11) NOT NULL COMMENT '数量',
+  `money` varchar(100) NOT NULL COMMENT '购物券价值',
+  `state` int(1) NOT NULL default '0' COMMENT '0未使用，1已使用',
+  `notice` int(1) NOT NULL default '0' COMMENT '0未发送通知 1已发送通知',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `expense`;
+
+CREATE TABLE `expense` (
+  `Id` varchar(100) NOT NULL,
+  `Usnumber` varchar(100) default NULL COMMENT '会员账号',
+  `CreateTime` datetime default NULL,
+  `Number` int(11) default NULL COMMENT '数量',
+  `Commodity` varchar(500) default NULL COMMENT '商品id',
+  `Money` varchar(500) default NULL COMMENT '金额',
+  `Commercial` varchar(100) default NULL COMMENT '商户id',
+  `orderid` int(10) NOT NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `gutuidevices`;
+
+CREATE TABLE `gutuidevices` (
+  `id` int(11) NOT NULL auto_increment,
+  `ClientId` varchar(500) default NULL,
+  `DeviceType` varchar(255) default NULL,
+  `Account` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `join`;
+
+CREATE TABLE `join` (
+  `id` int(5) NOT NULL auto_increment,
+  `joinname` varchar(100) NOT NULL,
+  `joinaddress` varchar(100) NOT NULL,
+  `joinmessage` varchar(100) NOT NULL,
+  `joinphone` varchar(100) NOT NULL,
+  `CreatTime` datetime NOT NULL COMMENT '申请时间',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `memberuser`;
+
+CREATE TABLE `memberuser` (
+  `Id` varchar(100) NOT NULL,
+  `UserName` varchar(100) default NULL COMMENT '姓名',
+  `prov` varchar(100) NOT NULL COMMENT '最后登陆的省份',
+  `city` varchar(100) NOT NULL COMMENT '最后登陆的城市',
+  `Alias` varchar(100) default NULL COMMENT '昵称',
+  `Age` varchar(100) default NULL COMMENT '年龄',
+  `Sex` varchar(100) default NULL COMMENT '性别（男，女）',
+  `Phone` varchar(100) default NULL COMMENT '手机号',
+  `IdNumber` varchar(100) default NULL COMMENT '身份证号',
+  `Account` varchar(100) default NULL COMMENT '账号',
+  `Password` varchar(100) default NULL COMMENT '密码',
+  `CreatTime` datetime default NULL,
+  `Image` varchar(500) default NULL COMMENT '头像',
+  `BgImage` varchar(500) default NULL COMMENT '背景图片',
+  `Balance` varchar(500) default NULL COMMENT '余额',
+  `JiuQian` varchar(500) default '0' COMMENT '酒钱数',
+  `clientid` varchar(100) NOT NULL COMMENT '设备码',
+  `devicetype` varchar(11) NOT NULL COMMENT '设备类型【0安卓，1 小程序】',
+  `orderid` int(10) NOT NULL COMMENT '排列顺序',
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `messagecolumn`;
+
+CREATE TABLE `messagecolumn` (
+  `Id` varchar(100) NOT NULL,
+  `Title` varchar(100) default NULL,
+  `Content` longtext,
+  `Images` varchar(500) default NULL,
+  `CreateTime` datetime default NULL,
+  `StandbyOne` varchar(500) default NULL,
+  `StandbyTwo` varchar(500) default NULL,
+  `StandbyThree` varchar(500) default NULL,
+  `StandbyFore` varchar(500) default NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `money`;
+
+CREATE TABLE `money` (
+  `id` int(11) NOT NULL auto_increment,
+  `number` int(11) NOT NULL COMMENT '购物券金额',
+  `creatime` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `ordercommodity`;
+
+CREATE TABLE `ordercommodity` (
+  `id` int(11) NOT NULL auto_increment COMMENT 'id',
+  `OrderId` varchar(100) default NULL COMMENT '订单号',
+  `CommodityId` varchar(100) default NULL,
+  `Quantity` varchar(100) default NULL,
+  `CreatTime` datetime NOT NULL,
+  `posttime` date NOT NULL COMMENT '下单年月日',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=516 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `orderform`;
+
+CREATE TABLE `orderform` (
+  `Id` varchar(100) NOT NULL COMMENT '订单id',
+  `OrderId` varchar(255) default NULL COMMENT '订单号',
+  `UserId` varchar(100) default NULL COMMENT '下单人',
+  `CreatTime` datetime default NULL COMMENT '下单时间',
+  `posttime` date NOT NULL COMMENT '下单年月日',
+  `tiquma` varchar(1000) default NULL COMMENT '商品提取码',
+  `Remark` varchar(500) default NULL COMMENT '备注',
+  `PaymentType` int(1) default '4' COMMENT '付款类型 1.酒钱2.现金3,混合支付4.没有支付',
+  `address` varchar(100) default NULL COMMENT '预约地址',
+  `time` date NOT NULL COMMENT '预约时间',
+  `State` int(1) default NULL COMMENT '1, 待提取 2，返利单  3换购单 4，已失效 5，待付款 6待评价 7 以退款 8以提取',
+  `PayAmount` varchar(500) default NULL COMMENT '支付',
+  `Commercial` varchar(500) default NULL COMMENT '商户',
+  `TakeAddress` varchar(100) NOT NULL COMMENT '提取地址',
+  `TakeTime` datetime NOT NULL COMMENT '提取时间',
+  `PayJiuQian` varchar(100) NOT NULL COMMENT '支付酒钱',
+  `paytype` int(1) NOT NULL COMMENT '0支付宝支付1微信支付',
+  `dingdantype` int(1) NOT NULL default '0' COMMENT '订单类型1.预约0.现提',
+  `jingao` int(11) NOT NULL default '0' COMMENT '预约订单缺货警告1.警告0不警告',
+  `prov` varchar(100) NOT NULL COMMENT '支付时候的省份',
+  `city` varchar(100) NOT NULL COMMENT '支付时候的城市',
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `pickuplist`;
+
+CREATE TABLE `pickuplist` (
+  `id` int(11) NOT NULL auto_increment,
+  `Commercial` varchar(255) default NULL COMMENT '商户账号',
+  `orderId` varchar(255) default NULL COMMENT '订单号',
+  `pickUpTime` date default NULL COMMENT '提货时间',
+  `jiuQian` int(255) default NULL COMMENT '商家获取的酒钱',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `pickupmoney`;
+
+CREATE TABLE `pickupmoney` (
+  `id` int(11) NOT NULL auto_increment,
+  `Commercial` varchar(255) default NULL,
+  `RealName` varchar(255) default NULL,
+  `BankName` varchar(255) default NULL,
+  `BankNo` varchar(255) default NULL,
+  `ApplyTime` datetime default NULL,
+  `CreatTime` datetime default NULL COMMENT '提现时间',
+  `posttime` date NOT NULL,
+  `State` int(1) default '0' COMMENT '状态：0待提现 1已提现',
+  `ApplyMonery` varchar(255) default NULL,
+  `send` int(1) NOT NULL default '0' COMMENT '0未发送通知 1已发送通知',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `pmw_admin`;
+
+CREATE TABLE `pmw_admin` (
+  `id` smallint(5) unsigned NOT NULL auto_increment COMMENT '信息id',
+  `username` varchar(30) NOT NULL COMMENT '用户名',
+  `password` char(32) NOT NULL COMMENT '密码',
+  `nickname` char(32) NOT NULL COMMENT '昵称',
+  `prov` varchar(100) NOT NULL COMMENT '省份id',
+  `live_prov` varchar(100) NOT NULL COMMENT '省份名称',
+  `city` varchar(100) NOT NULL COMMENT '城市id',
+  `live_city` varchar(100) NOT NULL COMMENT '城市名称',
+  `question` tinyint(1) unsigned NOT NULL COMMENT '登录提问',
+  `answer` varchar(50) NOT NULL COMMENT '登录回答',
+  `levelname` tinyint(1) unsigned NOT NULL COMMENT '级别',
+  `checkadmin` enum('true','false') NOT NULL COMMENT '审核',
+  `loginip` char(20) NOT NULL COMMENT '登录IP',
+  `logintime` int(10) unsigned NOT NULL COMMENT '登录时间',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_admingroup`;
+
+CREATE TABLE `pmw_admingroup` (
+  `id` tinyint(3) unsigned NOT NULL auto_increment COMMENT '管理组id',
+  `groupname` varchar(30) NOT NULL COMMENT '管理组名称',
+  `description` text NOT NULL COMMENT '管理组描述',
+  `groupsite` varchar(30) NOT NULL COMMENT '默认进入站',
+  `checkinfo` set('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_adminnotes`;
+
+CREATE TABLE `pmw_adminnotes` (
+  `uname` varchar(30) NOT NULL COMMENT '用户名',
+  `body` mediumtext NOT NULL COMMENT '便签内容',
+  `posttime` int(10) unsigned NOT NULL COMMENT '提交时间',
+  `postip` varchar(30) NOT NULL COMMENT '提交IP',
+  PRIMARY KEY  (`uname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_adminprivacy`;
+
+CREATE TABLE `pmw_adminprivacy` (
+  `groupid` tinyint(3) unsigned NOT NULL COMMENT '所属管理组id',
+  `siteid` tinyint(1) unsigned NOT NULL COMMENT '站点id',
+  `model` varchar(30) NOT NULL COMMENT '管理模块',
+  `classid` int(10) NOT NULL COMMENT '类型id',
+  `action` varchar(10) NOT NULL COMMENT '可执行操作'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_cascadedata`;
+
+CREATE TABLE `pmw_cascadedata` (
+  `id` smallint(5) unsigned NOT NULL auto_increment COMMENT '级联数据id',
+  `dataname` char(30) NOT NULL COMMENT '级联数据名称',
+  `datavalue` char(20) NOT NULL COMMENT '级联数据值',
+  `datagroup` char(20) NOT NULL COMMENT '所属级联组',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `level` tinyint(1) unsigned NOT NULL COMMENT '级联数据层次',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20020 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_diymenu`;
+
+CREATE TABLE `pmw_diymenu` (
+  `id` smallint(5) unsigned NOT NULL auto_increment COMMENT '自定义菜单id',
+  `siteid` smallint(5) unsigned NOT NULL default '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属菜单id',
+  `classname` varchar(30) NOT NULL COMMENT '菜单项名称',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_failedlogin`;
+
+CREATE TABLE `pmw_failedlogin` (
+  `username` char(10) NOT NULL COMMENT '用户名',
+  `ip` char(15) NOT NULL COMMENT '登录IP',
+  `time` int(10) unsigned NOT NULL COMMENT '登录时间',
+  `num` tinyint(1) NOT NULL COMMENT '失败次数',
+  `isadmin` tinyint(1) NOT NULL COMMENT '是否是管理员',
+  PRIMARY KEY  (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_lnk`;
+
+CREATE TABLE `pmw_lnk` (
+  `id` smallint(5) unsigned NOT NULL auto_increment COMMENT '快捷方式id',
+  `lnkname` varchar(30) NOT NULL COMMENT '快捷方式名称',
+  `lnklink` varchar(50) NOT NULL COMMENT '跳转链接',
+  `lnkico` varchar(50) NOT NULL COMMENT 'ico地址',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_maintype`;
+
+CREATE TABLE `pmw_maintype` (
+  `id` smallint(5) unsigned NOT NULL auto_increment COMMENT '二级类别id',
+  `siteid` smallint(5) unsigned NOT NULL default '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '类别上级id',
+  `parentstr` varchar(50) NOT NULL COMMENT '类别上级id字符串',
+  `classname` varchar(30) NOT NULL COMMENT '类别名称',
+  `picurl` varchar(100) NOT NULL,
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_site`;
+
+CREATE TABLE `pmw_site` (
+  `id` smallint(5) unsigned NOT NULL auto_increment COMMENT '站点ID',
+  `sitename` varchar(30) NOT NULL COMMENT '站点名称',
+  `sitekey` varchar(30) NOT NULL COMMENT '站点标识',
+  `sitelang` varchar(50) NOT NULL COMMENT '站点语言包',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_sysevent`;
+
+CREATE TABLE `pmw_sysevent` (
+  `id` int(11) unsigned NOT NULL auto_increment COMMENT '信息id',
+  `uname` varchar(30) NOT NULL COMMENT '用户名',
+  `siteid` tinyint(1) unsigned NOT NULL COMMENT '站点id',
+  `model` varchar(30) NOT NULL COMMENT '操作模块',
+  `classid` int(10) unsigned NOT NULL COMMENT '栏目id',
+  `action` varchar(10) NOT NULL COMMENT '执行操作',
+  `posttime` int(10) NOT NULL COMMENT '操作时间',
+  `ip` varchar(20) NOT NULL COMMENT '操作ip',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2982 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_uploads`;
+
+CREATE TABLE `pmw_uploads` (
+  `id` mediumint(10) unsigned NOT NULL auto_increment COMMENT '上传信息id',
+  `name` varchar(30) NOT NULL COMMENT '文件名称',
+  `path` varchar(100) NOT NULL COMMENT '文件路径',
+  `size` int(10) NOT NULL COMMENT '文件大小',
+  `type` enum('image','soft','media') NOT NULL COMMENT '文件类型',
+  `posttime` int(10) NOT NULL COMMENT '上传日期',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1091 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pmw_webconfig`;
+
+CREATE TABLE `pmw_webconfig` (
+  `siteid` smallint(5) unsigned NOT NULL default '1' COMMENT '站点id',
+  `varname` varchar(50) NOT NULL COMMENT '变量名称',
+  `varinfo` varchar(80) NOT NULL COMMENT '参数说明',
+  `vargroup` smallint(5) unsigned NOT NULL COMMENT '所属组',
+  `vartype` char(10) NOT NULL COMMENT '变量类型',
+  `varvalue` text NOT NULL COMMENT '变量值',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  PRIMARY KEY  (`varname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pushmessage`;
+
+CREATE TABLE `pushmessage` (
+  `id` int(11) NOT NULL auto_increment,
+  `MessageId` varchar(255) default NULL,
+  `Message` text,
+  `Account` varchar(255) default NULL,
+  `Title` varchar(255) default NULL,
+  `CreatTime` datetime default NULL,
+  `MessageType` varchar(255) default NULL,
+  `Commercial` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `randnumber`;
+
+CREATE TABLE `randnumber` (
+  `id` int(11) NOT NULL auto_increment COMMENT 'id',
+  `phone` varchar(50) NOT NULL COMMENT '用户电话号码',
+  `number` int(50) NOT NULL COMMENT '随机数',
+  `posttime` datetime NOT NULL COMMENT '时间',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `record`;
+
+CREATE TABLE `record` (
+  `id` int(11) NOT NULL auto_increment,
+  `account` varchar(100) NOT NULL COMMENT '会员账号',
+  `commercial` varchar(100) NOT NULL COMMENT '商户账号',
+  `money` varchar(50) NOT NULL COMMENT '优惠券金额',
+  `gettime` datetime NOT NULL COMMENT '优惠券使用时间',
+  `gid` int(11) NOT NULL COMMENT '购物券id',
+  `picurl` varchar(100) NOT NULL COMMENT '优惠券图标',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `shoppingcart`;
+
+CREATE TABLE `shoppingcart` (
+  `Id` varchar(100) NOT NULL default '',
+  `CommodityId` varchar(100) default NULL,
+  `CommodityNumber` varchar(100) default NULL,
+  `UserId` varchar(100) default NULL,
+  `CreatTime` datetime default NULL,
+  `Orderid` varchar(100) NOT NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `shuoming`;
+
+CREATE TABLE `shuoming` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(100) NOT NULL,
+  `content` text NOT NULL,
+  `posttime` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `upapp`;
+
+CREATE TABLE `upapp` (
+  `id` int(11) NOT NULL auto_increment,
+  `appName` varchar(255) default NULL,
+  `url` varchar(255) default NULL,
+  `version` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=gb2312;
+
+DROP TABLE IF EXISTS `yzm`;
+
+CREATE TABLE `yzm` (
+  `id` int(11) NOT NULL auto_increment,
+  `phone` bigint(50) NOT NULL COMMENT '电话号码',
+  `code` int(6) NOT NULL COMMENT '验证码',
+  `start_time` datetime NOT NULL COMMENT '验证码开始时间',
+  `num` int(10) NOT NULL COMMENT '发送次数',
+  `date` date NOT NULL COMMENT '发送日期',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+

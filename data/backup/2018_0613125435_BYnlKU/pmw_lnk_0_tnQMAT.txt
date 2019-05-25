@@ -1,0 +1,5 @@
+INSERT INTO `pmw_lnk` VALUES('1','所有订单','allorder.php','templates/images/lnkBg01.png','1');
+INSERT INTO `pmw_lnk` VALUES('2','所有商户','business.php','templates/images/lnkBg02.png','1');
+INSERT INTO `pmw_lnk` VALUES('3','会员列表','member.php','templates/images/lnkBg03.png','3');
+INSERT INTO `pmw_lnk` VALUES('4','商品列表','product.php','templates/images/lnkBg04.png','4');
+INSERT INTO `pmw_lnk` VALUES('9','提现记录','money.php','templates/images/lnkBg02.png','5');

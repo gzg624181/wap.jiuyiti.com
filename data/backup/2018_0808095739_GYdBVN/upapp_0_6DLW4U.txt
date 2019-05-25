@@ -1,0 +1,2 @@
+INSERT INTO `upapp` VALUES('1','wine','uploads/soft/20180324/1521852131.apk','uploads/image/20171206/1512549020.png','http://wap.jiuyiti.zrcase.com/uploads/soft/20180324/1521852131.apk','1.0');
+INSERT INTO `upapp` VALUES('2','WineSeller','uploads/soft/20180801/1533130403.apk','uploads/image/20180801/1533136155.png','https://wap.jiuyiti.zrcase.com/uploads/soft/20180801/1533130403.apk','1.42.20180801');

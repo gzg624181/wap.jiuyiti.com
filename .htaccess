@@ -1,0 +1,67 @@
+# 将 RewriteEngine 模式打开
+RewriteEngine On
+
+# 修改以下语句中的 / 改为您的系统目录地址，如果程序放在根目录中则无需修改
+RewriteBase /jiuyiti
+
+# Rewrite 系统规则请勿修改
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^index.html$ index.php
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^about-([0-9]+)-([0-9]+)\.html$ about.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^aboutlist-([0-9]+)-([0-9]+)\.html$ aboutlist.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^aboutshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ aboutshow.php?cid=$1&id=$2&page=$3
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^news-([0-9]+)-([0-9]+)\.html$ news.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^login-([0-9]+)-([0-9]+)\.html$ login.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^cart-([0-9]+)-([0-9]+)\.html$ cart.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^shoppingcart-([0-9]+)-([0-9]+)\.html$ shoppingcart.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^getlist-([0-9]+)-([0-9]+)\.html$ getlist.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^pay-([0-9]+)-([0-9]+)\.html$ pay.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^profile-([0-9]+)-([0-9]+)\.html$ profile.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^order-([0-9]+)-([0-9]+)\.html$ order.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^address-([0-9]+)-([0-9]+)\.html$ address.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^basic-([0-9]+)-([0-9]+)\.html$ basic.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^newsshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ newsshow.php?cid=$1&id=$2&page=$3
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^product-([0-9]+)-([0-9]+)\.html$ product.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^productshow-([0-9]+)-([a-zA-Z0-9]+)-([0-9]+)-([0-9]+)\.html$ productshow.php?cid=$1&id=$2&i=$3&page=$4
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^case-([0-9]+)-([0-9]+)\.html$ case.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^caselist-([0-9]+)-([0-9]+)\.html$ caselist.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^caseshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ caseshow.php?cid=$1&id=$2&page=$3
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^aboutjoin-([0-9]+)-([0-9]+)\.html$ aboutjoin.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^joinshow-([0-9]+)\.html$ joinshow.php?id=$1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^message-([0-9]+)\.html$ message.php?page=$1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^contact-([0-9]+)-([0-9]+)\.html$ contact.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^soft-([0-9]+)-([0-9]+)\.html$ soft.php?cid=$1&page=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^softshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ softshow.php?cid=$1&id=$2&page=$3
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^goods-([0-9]+)-([0-9]+)-([0-9]+)\.html$ goods.php?cid=$1&tid=$2&page=$3
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^goodsshow-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)\.html$ goodsshow.php?cid=$1&tid=$2&id=$3&page=$4
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^vote-([0-9]+)\.html$ vote.php?id=$1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(\w+)\.html$ $1.php?

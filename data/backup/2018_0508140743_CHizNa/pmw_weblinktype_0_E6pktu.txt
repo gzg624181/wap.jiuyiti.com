@@ -1,0 +1,1 @@
+INSERT INTO `pmw_weblinktype` VALUES('1','1','0','0,','默认分类','1','true');

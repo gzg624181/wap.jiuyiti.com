@@ -1,0 +1,3 @@
+INSERT INTO `pmw_banner` VALUES('4','3','#','uploads/image/20171214/1513222015.png','4');
+INSERT INTO `pmw_banner` VALUES('9','2','#','uploads/image/20171214/1513222491.png','5');
+INSERT INTO `pmw_banner` VALUES('10','1','#','uploads/image/20171214/1513223737.png','0');

@@ -1,0 +1,4 @@
+INSERT INTO `pmw_fenlei` VALUES('10','流动自提点','2018-01-04 02:02:58','0');
+INSERT INTO `pmw_fenlei` VALUES('11','水果店','2018-01-11 03:04:09','0');
+INSERT INTO `pmw_fenlei` VALUES('12','便利店','2018-01-16 04:28:20','0');
+INSERT INTO `pmw_fenlei` VALUES('13','企业','2018-01-16 05:14:43','0');

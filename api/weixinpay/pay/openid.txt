@@ -1,0 +1,51 @@
+Array
+(
+    [Id] => a9rs9OooW6BnXKKoYFZE
+    [Title] => 帝澜思橡木桶精选干红葡萄酒1支
+    [Explains] => 
+    [Particular] => 
+    [Images] => uploads/image/20180824/1535104635.jpg
+    [picurl2] => uploads/image/20180323/1521820607.jpg
+    [picarr] => ["uploads/image/20180824/1535103252.jpg"]
+    [NewPrice] => 95
+    [OldPrice] => 119
+    [shprice] => 50
+    [Standard] => 
+    [Colour] => 
+    [live_prov] => 湖北省
+    [prov] => 9000
+    [live_city] => 武汉市
+    [city] => 9001
+    [JiuQian] => 4
+    [JiuQianMax] => 
+    [Pinpai] => 帝澜思
+    [Types] => 红葡萄酒
+    [gd] => 1
+    [yuyue] => 1
+    [Area] => 
+    [Country] => 澳大利亚
+    [RecommendIndex] => 9
+    [Num] => 36
+    [CommentNumber] => 
+    [Grade] => 
+    [ActivityType] => 0
+    [TwoImg] => 
+    [CommodityType] => 0
+    [CommodityNumber] => 0
+    [Period] => 
+    [Column] => 
+    [Commercial] => 
+    [CreatTime] => 2018-03-23 10:04:48
+    [CommodityClass] => 18
+    [del] => 0
+    [SJJiuQian] => 4
+    [orderid] => 116
+    [Details] => <div align="center">
+	<img src="https://wap.jiuyiti.zrcase.com/uploads/image/20180409/1523254900.png" alt="" /><img src="https://wap.jiuyiti.zrcase.com/uploads/image/20180409/1523256229.png" alt="" /><img src="https://wap.jiuyiti.zrcase.com/uploads/image/20180409/1523260005.png" alt="" /><img src="https://wap.jiuyiti.zrcase.com/uploads/image/20180409/1523258957.png" alt="" /><img src="https://wap.jiuyiti.zrcase.com/uploads/image/20180409/1523255628.png" alt="" /><img src="https://wap.jiuyiti.zrcase.com/uploads/image/20180409/1523257005.png" alt="" /><img src="https://wap.jiuyiti.zrcase.com/uploads/image/20180409/1523257877.png" alt="" /><br />
+</div>
+<br />
+    [canshu] => 
+    [UserName] => admin
+    [adminlevel] => 1
+    [summary] => 
+)

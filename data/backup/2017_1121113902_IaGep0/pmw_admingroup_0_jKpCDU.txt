@@ -1,0 +1,2 @@
+INSERT INTO `pmw_admingroup` VALUES('1','超级管理员','超级管理员组','1','true');
+INSERT INTO `pmw_admingroup` VALUES('2','区域管理员','区域管理员','1','true');

@@ -1,0 +1,7 @@
+INSERT INTO `pmw_discout` VALUES('1','0<=金额<300','0','300','0','100','1');
+INSERT INTO `pmw_discout` VALUES('2','300<=金额<1000','300','1000','5','95','2');
+INSERT INTO `pmw_discout` VALUES('3','1000<=金额<2000','1000','2000','10','90','3');
+INSERT INTO `pmw_discout` VALUES('4','2000<=金额<3000','2000','3000','12','88','4');
+INSERT INTO `pmw_discout` VALUES('9','3000<=金额<5000','3000','5000','15','85','5');
+INSERT INTO `pmw_discout` VALUES('10','5000<=金额<7000','5000','7000','20','80','6');
+INSERT INTO `pmw_discout` VALUES('12','金额>=7000','7000','20000','30','70','7');

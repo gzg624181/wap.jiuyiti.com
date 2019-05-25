@@ -1,0 +1,6 @@
+INSERT INTO `expense` VALUES('cE4RWUVZyAMZ4TAi9FiE','','2017-05-09 04:03:39','0','','','','1');
+INSERT INTO `expense` VALUES('kPvI0cUXQx2jqmzfnf8u','136487545894342','2017-05-09 04:11:15','0','1545123','100111','','5');
+INSERT INTO `expense` VALUES('PxmFHpecZxMz8oUqx7T2','','2017-05-09 04:09:35','0','','','','3');
+INSERT INTO `expense` VALUES('r5t4RpwZwvkLVXXEtGzE','13648754589','2017-05-09 04:11:05','0','','','','4');
+INSERT INTO `expense` VALUES('V7ZrsS5EicZVEeJA08tt','','2017-05-09 04:05:29','0','','','','2');
+INSERT INTO `expense` VALUES('XYSBC5W7puYOigx2bqaE','15580865806','2017-05-26 01:59:43','20','01a15fbc-fec2-42ee-9eed-d749cfe1c0d2','1988254','12314','6');

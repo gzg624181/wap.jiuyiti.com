@@ -1,0 +1,1 @@
+INSERT INTO `appversion` VALUES('1','','','','');

@@ -1,0 +1,9 @@
+INSERT INTO `pushmessage` VALUES('87','uhEEMx6vsO6ItMiylom1','364564654345354','a6b3e30553aba0b0ffd0996b7617ee7c','45345345','2017-08-05 12:24:13','','');
+INSERT INTO `pushmessage` VALUES('88','uhEEMx6vsO6ItMiylom1','364564654345354','ce9a5d44484982459b8bc2c22830be71','45345345','2017-08-05 12:24:13','','');
+INSERT INTO `pushmessage` VALUES('89','uVYC1YGpKCrbkGrAkqBG','2121212121212','a6b3e30553aba0b0ffd0996b7617ee7c','w12121','2017-09-16 10:59:20','','');
+INSERT INTO `pushmessage` VALUES('90','9DU8kc2rOvcXPZLt8BAh','12222222222222222222222222','68f950be99a2f25b2c398fd0d1735efa','1111111111111111','2017-09-16 05:01:24','','');
+INSERT INTO `pushmessage` VALUES('91','XOfeGFb3W3o8giUnGc4l','3453645646465465456','68f950be99a2f25b2c398fd0d1735efa','345345354','2017-09-16 05:51:24','','');
+INSERT INTO `pushmessage` VALUES('94','GGcYbQmGQgFanVpu33zm',' 飞鸽传书API 是 飞鸽传书（上海）信息科技有限公司针对短信开放出的接口\r\n\r\n采用 HTTP POST 发送模式，飞鸽传书API  提供完整且强大的短信发送功能，使用时无需提交短信内容和短信签名，仅需提交你在飞鸽传书应用程序中创建的短信项目的标记，并可以使用文本变量动态的控制每封短信的内容。\r\n\r\n使用 飞鸽传书 API 你将可以使用飞鸽传书管理后台高效、可视化地创建你的短信模板。当用户请求使用此项目进行触发时，飞鸽传书会立即执行发送动作，无需担心发送延迟问题。 ','68f950be99a2f25b2c398fd0d1735efa','111','2017-09-18 11:02:53','','');
+INSERT INTO `pushmessage` VALUES('95','najXTZJPzc0f3fg2rAsp','几乎有图','68f950be99a2f25b2c398fd0d1735efa','改vjhghj','2017-09-28 09:27:29','','');
+INSERT INTO `pushmessage` VALUES('96','YsgMYQRc0c7NNKpBWLXT','	飞鸽传书API 是 飞鸽传书（上海）信息科技有限公司针对短信开放出的接口 采用 HTTP POST 发送模式，飞鸽传书API 提供完整且强大的短信发送功能，使用时无需提交短信内容和短信签名，仅需提交你在飞鸽传书应用程序中创建的短信项目的标记，并可以使用文本变量动态的控制每封短信的内容。 使用 飞鸽传书 API 你将可以使用飞鸽传书管理后台高效、可视化地创建你的短信模板。当用户请求使用此项目进行触发时，飞鸽传书会立即执行发送动作，无需担心发送延迟问题。','68f950be99a2f25b2c398fd0d1735efa','刚好符合规范和股份过户费','2017-09-28 09:29:42','','');
+INSERT INTO `pushmessage` VALUES('98','y8WteTujwM8dMywxQTkR','kljljlknkjn','dcb65c62ba880b7d8ea6647950e56bae','ioyhuhjk','2017-10-30 09:52:31','','');

@@ -1,0 +1,1 @@
+INSERT INTO `gd` VALUES('1','uploads/image/20180223/1519376697.png','2018-05-31 13:54:00','1');

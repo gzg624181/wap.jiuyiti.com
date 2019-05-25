@@ -1,0 +1,1 @@
+INSERT INTO `pmw_infosrc` VALUES('1','酒易提','1','1');

@@ -1,0 +1,6 @@
+INSERT INTO `commodity_month_nums` VALUES('3','veAmf7cTkXlKJZM0Ufet','2018','8','23');
+INSERT INTO `commodity_month_nums` VALUES('4','cBCtLf1FV5KtEW9bhxmj','2018','8','2');
+INSERT INTO `commodity_month_nums` VALUES('5','oUoYnNXVWSWDhNNc2YMI','2018','8','1');
+INSERT INTO `commodity_month_nums` VALUES('6','IGPpMqHgTgxycj1ski8D','2018','8','2');
+INSERT INTO `commodity_month_nums` VALUES('7','ApR0xVVQmSx2hVAbr9Ft','2018','8','21');
+INSERT INTO `commodity_month_nums` VALUES('8','1ae8fa75bc87475f9aeea706ab68b2fc','2018','8','20');

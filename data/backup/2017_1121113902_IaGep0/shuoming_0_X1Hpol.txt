@@ -1,0 +1,1 @@
+INSERT INTO `shuoming` VALUES('1','酒易提操作说明','<div style=\"text-align:center;\">\r\n	<img src=\"http://wap.jiuyiti.zrcase.com/uploads/image/20171101/1509521906.jpg\" alt=\"\" /><br />\r\n</div>','2017-11-01');

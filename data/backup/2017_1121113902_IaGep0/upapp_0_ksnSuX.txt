@@ -1,0 +1,2 @@
+INSERT INTO `upapp` VALUES('1','wine','uploads/image/20171026/1509019090.png','1.0');
+INSERT INTO `upapp` VALUES('2','WineSeller','uploads/soft/20171118/1510979062.apk','1.15.20171117');

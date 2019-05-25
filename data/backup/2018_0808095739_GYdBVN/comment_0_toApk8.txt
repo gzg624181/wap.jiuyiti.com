@@ -1,0 +1,2 @@
+INSERT INTO `comment` VALUES('1','01a15fbc-fec2-42ee-9eed-d749cfe1c0d2','酒不多 味道很多','67ff3ef1-cb5b-49da-a458-94e527ed3295','zs','2015-08-08 23:17:35','','2');
+INSERT INTO `comment` VALUES('2','626d7b52-bc53-45db-9bf1-4e4667c59f85','味道还可以','123','user','2017-05-17 07:37:17','234234','1');
